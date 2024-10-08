@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "824217137422",
+    "project_id": "brotrachka",
+    "storage_bucket": "brotrachka.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824217137422:android:9c22ead3af9c18f000675f",
+        "android_client_info": {
+          "package_name": "com.example.brotrachka"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4jb43pmSEmA9lnRYXtgetb-zjEKjHmHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
