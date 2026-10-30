@@ -42,6 +42,8 @@ class Job {
   }
 
   factory Job.fromMap(Map<String, dynamic> map) {
+    // JobService persists createdAt; retain support for older postedAt data.
+    final timestamp = map['createdAt'] ?? map['postedAt'];
     return Job(
       id: map['id'] ?? '',
       title: map['title'] ?? '',
@@ -51,9 +53,11 @@ class Job {
       requirements: map['requirements'] ?? '',
       peopleRequired: map['peopleRequired'] ?? 1,
       acceptedPeople: map['acceptedPeople'] ?? 0, // Новое поле
-      postedAt: (map['postedAt'] != null)
-          ? (map['postedAt'] as Timestamp).toDate()
-          : DateTime.now(),
+      postedAt: timestamp is Timestamp
+          ? timestamp.toDate()
+          : timestamp is DateTime
+              ? timestamp
+              : DateTime.now(),
       city: map['city'] ?? '',
     );
   }
